@@ -8,8 +8,8 @@ pipeline {
         }
         stage('Gradle Build and Deploy') {
             steps {
-            properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/axebia/pr-ghprb.git/'], pipelineTriggers([<object of type org.jenkinsci.plugins.ghprb.GhprbTrigger>])])
-        }  
+            properties([pipelineTriggers([<object of type org.jenkinsci.plugins.ghprb.GhprbTrigger>])])
+            }  
     }
 }
 }
