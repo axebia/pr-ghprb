@@ -8,7 +8,11 @@ pipeline {
         }
         stage('Github Project') {
             steps {
-                properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/axebia/pr-ghprb/']])
+            properties([
+  parameters([
+    string($class: 'GithubProjectProperty', displayName: '', projectUrlStr:'https://github.com/axebia/pr-ghprb/' )
+  ])
+])
             }  
     }
 }
